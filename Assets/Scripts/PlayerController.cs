@@ -194,15 +194,15 @@ public class PlayerController : MonoBehaviour
 
     private void CycleTime()
     {
-        if (!TimeManager.Instance.Advance())
+        if (TimeManager.Instance.Advance())
         {
-            Debug.Log("Cannot cycle time");
+            TryPickUp();
         }
     }
     
     private void TryDropObject()
     {
-        if (_isMoving) return;
+        if (_isMoving || !_heldObject) return;
 
         Vector3 dropPosition = GridManager.Instance.GetPlayerPosition() + _facingDir.normalized;
         if (GridManager.Instance.AddItem(_heldObject, dropPosition))

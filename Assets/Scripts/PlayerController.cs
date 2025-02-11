@@ -14,7 +14,7 @@ public enum DirectionHeld
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    private Vector3 _cameraOffset;
+    [SerializeField] private Vector3 cameraOffset;
 
     [SerializeField] private float moveDuration = 0.5f;
     [SerializeField] private float pickUpDuration = 0.5f;
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _facingDir = cameraTransform.forward;
-        _cameraOffset = cameraTransform.position - transform.position;
         GridManager.Instance.SetPlayerPosition(transform.position);
     }
 
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraTransform.position = cameraTransform.rotation * _cameraOffset + transform.position;
+        cameraTransform.position = cameraTransform.rotation * cameraOffset + transform.position;
     }
 
     private void FixedUpdate()

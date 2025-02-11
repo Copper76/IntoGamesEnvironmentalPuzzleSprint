@@ -51,6 +51,7 @@ public class GridManager : RegulatorSingleton<GridManager>
     private Dictionary<Vector3, Item> itemPlacements = new Dictionary<Vector3, Item>();
 
     private Vector3 _playerPosition;
+    private Vector3 _playerTargetPosition;
 
     private void Start()
     {
@@ -62,9 +63,24 @@ public class GridManager : RegulatorSingleton<GridManager>
         _playerPosition = RoundToInt(playerPosition);
     }
 
+    public void SetPlayerTargetPosition(Vector3 playerPosition)
+    {
+        _playerTargetPosition = RoundToInt(playerPosition);
+    }
+
     public Vector3 GetPlayerPosition()
     {
         return _playerPosition;
+    }
+
+    public Vector3 GetPlayerTargetPosition()
+    {
+        return _playerTargetPosition;
+    }
+
+    public bool IsPlayerInPosition(Vector3 position)
+    {
+        return (position == _playerPosition || position == _playerTargetPosition);
     }
 
     public bool IsPlayerInPosition(Vector3[] potentialPositions)
@@ -72,7 +88,7 @@ public class GridManager : RegulatorSingleton<GridManager>
         foreach (Vector3 position in potentialPositions)
         {
             Vector3 newPosition = RoundToInt(position);
-            if (newPosition == _playerPosition) return true;
+            if (newPosition == _playerPosition || newPosition == _playerTargetPosition) return true;
         }
         return false;
     }

@@ -75,12 +75,11 @@ public class Plant : Item
             case TimePeriod.PAST:
                 return true;
             case TimePeriod.PRESENT:
-                return !(bloom.activeInHierarchy && GridManager.Instance.GetPlayerPosition() == transform.position + Vector3.up * 2.0f);
+                return !(bloom.activeInHierarchy && GridManager.Instance.IsPlayerInPosition(transform.position + Vector3.up * 2.0f));
             case TimePeriod.FUTURE:
-                Vector3 playerPosition = GridManager.Instance.GetPlayerPosition();
-                if (playerPosition == transform.position + Vector3.up) return false;
-                if (wither1.activeInHierarchy && playerPosition == transform.position + Vector3.up + transform.forward) return false;
-                if (wither2.activeInHierarchy && playerPosition == transform.position + Vector3.up + transform.forward * 2.0f) return false;
+                if (GridManager.Instance.IsPlayerInPosition(transform.position + Vector3.up)) return false;
+                if (wither1.activeInHierarchy && GridManager.Instance.IsPlayerInPosition(transform.position + Vector3.up + transform.forward)) return false;
+                if (wither2.activeInHierarchy && GridManager.Instance.IsPlayerInPosition(transform.position + Vector3.up + transform.forward * 2.0f)) return false;
                 return true;
             default:
                 return false;

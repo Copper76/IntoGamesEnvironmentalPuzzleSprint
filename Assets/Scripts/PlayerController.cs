@@ -147,6 +147,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        GridManager.Instance.SetPlayerTargetPosition(target);
+
         _isMoving = true;
 
         transform.DOMove(target, moveDuration)

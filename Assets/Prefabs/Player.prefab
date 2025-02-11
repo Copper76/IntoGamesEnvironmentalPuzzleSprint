@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8973cd7c02147e340aa605d39307d923, type: 2}
+  - {fileID: 2100000, guid: 33097e42ed54b6d488bcfd628ef765dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,11 +239,35 @@ MonoBehaviour:
     m_ActionId: 61a0b9f8-21db-4999-93cc-54de9981f70d
     m_ActionName: 'Player/MoveRight[/Keyboard/d]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: RotateLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f9b6eebc-e132-40ac-9ec6-fb749d02e14c
     m_ActionName: 'Player/CameraRotateLeft[/Keyboard/q]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: RotateRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7bc723bf-d34a-445c-94cd-276f0b6aea5c
     m_ActionName: 'Player/CameraRotateRight[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -264,9 +288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  moveDuration: 0.5
+  cameraOffset: {x: 0, y: 5, z: -3}
+  moveDuration: 0.25
   pickUpDuration: 0.5
-  moveEaseType: 9
+  moveEaseType: 1
   pickUpEaseType: 18
 --- !u!1 &1461093560198482159
 GameObject:

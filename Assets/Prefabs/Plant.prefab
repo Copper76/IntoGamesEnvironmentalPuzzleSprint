@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a0b4eb289cc3604f9a810155c4808c3, type: 2}
+  - {fileID: 2100000, guid: ff5f870e5b0f3a24dac939a5a163c0a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a0b4eb289cc3604f9a810155c4808c3, type: 2}
+  - {fileID: 2100000, guid: ff5f870e5b0f3a24dac939a5a163c0a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,7 +261,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a0b4eb289cc3604f9a810155c4808c3, type: 2}
+  - {fileID: 2100000, guid: ff5f870e5b0f3a24dac939a5a163c0a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -296,7 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloom: {fileID: 3991713703965156496}
-  wither: {fileID: 5689256464207840374}
+  wither1: {fileID: 0}
+  wither2: {fileID: 0}
+  timePeriodOffset: 0
 --- !u!1 &5689256464207840374
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +397,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a0b4eb289cc3604f9a810155c4808c3, type: 2}
+  - {fileID: 2100000, guid: ff5f870e5b0f3a24dac939a5a163c0a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
